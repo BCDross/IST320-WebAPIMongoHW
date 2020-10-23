@@ -28,6 +28,7 @@ namespace ToDoApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<TodoContext>(opt => opt.UseInMemoryDatabase("ToDoList"));
+            services.AddSwaggerGen();
             services.AddControllers();
         }
 
@@ -38,6 +39,10 @@ namespace ToDoApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+            app.UseSwagger();
 
             app.UseHttpsRedirection();
 
