@@ -9,7 +9,7 @@ using MobileToDoApi.Models;
 
 namespace MobileToDoApi.Controllers
 {
-    [Route("api/[controller")]
+    [Route("api/[controller]")]
     public class ToDoItemsController : Controller
     {
         private readonly IToDoRepository _toDoRepository;
