@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using MobileToDoApi.Interfaces;
+using MobileToDoApi.Services;
 
 namespace MobileToDoApi
 {
@@ -25,6 +27,10 @@ namespace MobileToDoApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
+
+            services.AddSingleton<IToDoRepository, ToDoRepository>();
+
             services.AddControllers();
         }
 
