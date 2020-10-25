@@ -35,6 +35,8 @@ namespace BooksApi
 
             services.AddSingleton<BookService>();
 
+            services.AddSwaggerGen();
+
             services.AddControllers().AddNewtonsoftJson(options => options.UseMemberCasing());
         }
 
@@ -51,6 +53,8 @@ namespace BooksApi
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSwagger();
 
             app.UseEndpoints(endpoints =>
             {

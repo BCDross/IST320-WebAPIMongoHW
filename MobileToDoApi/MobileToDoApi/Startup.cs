@@ -31,6 +31,8 @@ namespace MobileToDoApi
 
             services.AddSingleton<IToDoRepository, ToDoRepository>();
 
+            services.AddSwaggerGen();
+
             services.AddControllers();
         }
 
@@ -47,6 +49,8 @@ namespace MobileToDoApi
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSwagger();
 
             app.UseEndpoints(endpoints =>
             {
